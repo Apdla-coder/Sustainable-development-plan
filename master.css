@@ -1,0 +1,289 @@
+body {
+  margin: 0;
+  font-family: "Cairo", sans-serif;
+  background: #f9f9f9;
+  color: #444;
+  direction: rtl;
+  text-align: center;
+}
+
+/* ========== Landing Section ========== */
+.landing {
+  width: 100%;
+  height: 50vh;
+  background-position: center 30%;
+  background-size: cover;
+  position: relative;
+  transition: opacity 0.5s ease-in-out;
+  padding-bottom: 120px;
+  margin-top: 0;
+}
+.scroll-down {
+  text-align: center;
+  margin-top: 20px;
+  animation: bounce 2s infinite;
+  position: absolute;
+  top: 75%;
+  right: 50%;
+  transform: translateX(50%);
+}
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(8px);
+  }
+  60% {
+    transform: translateY(4px);
+  }
+}
+
+.scroll-down i {
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  margin-top: -25px;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  user-select: none;
+  transition: 0.3s;
+}
+
+.arrow:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.left-arrow {
+  left: 20px;
+}
+
+.right-arrow {
+  right: 20px;
+}
+
+.bullets {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-70%);
+  display: flex;
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.bullets li {
+  width: 12px;
+  height: 12px;
+  background: gray;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 1px solid white;
+}
+
+.bullets li.active {
+  background: var(--main-color, #0fa3cf);
+}
+
+.landing .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.31);
+}
+
+.landing .change-background {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ddd;
+}
+
+.landing .mov,
+.landing .mov2 {
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.landing .mov {
+  right: 0;
+}
+
+.landing .mov2 {
+  left: 0;
+}
+
+.landing .mov:hover,
+.landing .mov2:hover {
+  background-color: var(--transparent-color);
+}
+
+.landing .text-intro {
+  text-align: center;
+  padding: 60px 0;
+  text-shadow: 0 0 5px white;
+  color: white;
+}
+@media (max-width: 768px) {
+  .slider {
+    height: 50vh;
+  }
+  .landing {
+    height: 20vh;
+  }
+  .scroll-down {
+    top: 180px;
+  }
+  .arrow {
+    font-size: 24px;
+  }
+
+  .scroll-down {
+    font-size: 20px;
+  }
+}
+
+header {
+  background-color: #e0f2f1;
+  padding: 20px;
+}
+
+header h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #388e3c;
+}
+
+header p {
+  font-size: 18px;
+  max-width: 600px;
+  margin: auto;
+  color: #555;
+}
+
+.image-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  background-color: #f1f8e9;
+  gap: 45px;
+}
+
+.image-section img {
+  max-width: 400px;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.image-section .text {
+  max-width: 500px;
+  text-align: right;
+}
+
+.image-section h2 {
+  color: #388e3c;
+  margin-bottom: 10px;
+}
+
+.image-section p {
+  font-size: 16px;
+  color: #444;
+}
+
+.goals {
+  padding: 40px 20px;
+  background-color: #f1f8e9;
+}
+
+.goals h2 {
+  margin-bottom: 30px;
+  color: #388e3c;
+}
+
+.goal-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.goal {
+  background-color: white;
+  border-radius: 50px;
+  padding: 30px 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.goal:hover {
+  transform: scale(1.05);
+}
+
+.goal h3 {
+  margin-bottom: 10px;
+  color: #388e3c;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 24px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 16px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #388e3c;
+}
+
+footer {
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #e0f2f1;
+  color: #388e3c;
+}
+
+@media (max-width: 768px) {
+  .image-section {
+    flex-direction: column;
+  }
+
+  .image-section img {
+    max-width: 90%;
+  }
+
+  .image-section .text {
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 28px;
+  }
+}
