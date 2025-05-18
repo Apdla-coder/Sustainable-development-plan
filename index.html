@@ -9,13 +9,102 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-
     <script
       src="https://kit.fontawesome.com/a076d05399.js"
       crossorigin="anonymous"
     ></script>
+    <style>
+      body {
+        font-family: "Tahoma", sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+      .interactive-section,
+      .faq {
+        background-color: #fff;
+        margin: 2rem auto;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        max-width: 800px;
+      }
+      .interactive-section h2,
+      .faq h2 {
+        margin-bottom: 1rem;
+        font-size: 1.8rem;
+        color: #2c7a7b;
+        text-align: center;
+      }
+      .interactive-section label {
+        display: block;
+        margin: 0.5rem 0;
+        font-size: 1.1rem;
+      }
+      .interactive-section button {
+        margin-top: 1rem;
+        padding: 0.6rem 1.5rem;
+        background-color: #2c7a7b;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      .interactive-section button:hover {
+        background-color: #225e5f;
+      }
+      .faq h3 {
+        cursor: pointer;
+        background: #e9f5f4;
+        padding: 1rem;
+        margin: 0;
+        border-bottom: 1px solid #ddd;
+      }
+      .faq p {
+        display: none;
+        padding: 1rem;
+        background: #fdfdfd;
+        border: 1px solid #e0e0e0;
+        margin: 0;
+        border-top: none;
+      }
+      .translate-btn {
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        background-color: #2c7a7b;
+        color: white;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        z-index: 1000;
+      }
+      footer {
+        text-align: center;
+        background-color: #2c7a7b;
+        color: white;
+        padding: 2rem 1rem;
+        margin-top: 3rem;
+      }
+      footer .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+      }
+      footer .footer-links a {
+        color: white;
+        text-decoration: none;
+      }
+      footer .footer-links a:hover {
+        text-decoration: underline;
+      }
+    </style>
   </head>
   <body>
+    <button class="translate-btn" onclick="translatePage()">English</button>
+
     <section class="landing">
       <div class="container"></div>
       <div class="arrow left-arrow">&#10094;</div>
@@ -25,14 +114,21 @@
       >
         <i class="fa-solid fa-angles-down"></i>
       </div>
-
       <div class="arrow right-arrow">&#10095;</div>
       <ul class="bullets"></ul>
     </section>
 
     <header>
-      <h1>خطة التنمية المستدامة</h1>
-      <p>
+      <h1
+        data-ar="خطة التنمية المستدامة"
+        data-en="Sustainable Development Plan"
+      >
+        خطة التنمية المستدامة
+      </h1>
+      <p
+        data-ar="نسعى إلى بناء مستقبل أفضل وأكثر استدامة للجميع، من خلال تحقيق التوازن بين الاقتصاد، البيئة، والمجتمع."
+        data-en="We strive to build a better and more sustainable future for all, by balancing economy, environment, and society."
+      >
         نسعى إلى بناء مستقبل أفضل وأكثر استدامة للجميع، من خلال تحقيق التوازن
         بين الاقتصاد، البيئة، والمجتمع.
       </p>
@@ -44,8 +140,16 @@
         alt="التنمية المستدامة"
       />
       <div class="text">
-        <h2>لماذا التنمية المستدامة؟</h2>
-        <p>
+        <h2
+          data-ar="لماذا التنمية المستدامة؟"
+          data-en="Why Sustainable Development?"
+        >
+          لماذا التنمية المستدامة؟
+        </h2>
+        <p
+          data-ar="التنمية المستدامة تهدف إلى تلبية احتياجات الحاضر دون المساس بقدرة الأجيال القادمة على تلبية احتياجاتها، وهي تشمل الحفاظ على البيئة، تطوير الاقتصاد، والعدالة الاجتماعية."
+          data-en="Sustainable development aims to meet the needs of the present without compromising the ability of future generations to meet their needs. It includes environmental protection, economic growth, and social justice."
+        >
           التنمية المستدامة تهدف إلى تلبية احتياجات الحاضر دون المساس بقدرة
           الأجيال القادمة على تلبية احتياجاتها، وهي تشمل الحفاظ على البيئة،
           تطوير الاقتصاد، والعدالة الاجتماعية.
@@ -53,35 +157,201 @@
       </div>
     </section>
 
-    <section class="goals" id="next">
-      <h2>أهدافنا الرئيسية</h2>
+    <section class="goals">
+      <h2 data-ar="أهدافنا الرئيسية" data-en="Our Main Goals">
+        أهدافنا الرئيسية
+      </h2>
       <div class="goal-cards">
         <div class="goal">
           <i class="fas fa-hand-holding-heart fa-3x"></i>
-          <h3>القضاء على الفقر</h3>
-          <p>ضمان سبل العيش الكريم وتحقيق العدالة الاجتماعية.</p>
+          <h3 data-ar="القضاء على الفقر" data-en="No Poverty">
+            القضاء على الفقر
+          </h3>
+          <p
+            data-ar="ضمان سبل العيش الكريم وتحقيق العدالة الاجتماعية."
+            data-en="Ensure decent living standards and promote social justice."
+          >
+            ضمان سبل العيش الكريم وتحقيق العدالة الاجتماعية.
+          </p>
         </div>
         <div class="goal">
           <i class="fas fa-graduation-cap fa-3x"></i>
-          <h3>التعليم الجيد</h3>
-          <p>ضمان تعليم شامل وعالي الجودة مدى الحياة.</p>
+          <h3 data-ar="التعليم الجيد" data-en="Quality Education">
+            التعليم الجيد
+          </h3>
+          <p
+            data-ar="ضمان تعليم شامل وعالي الجودة مدى الحياة."
+            data-en="Ensure inclusive and quality lifelong education."
+          >
+            ضمان تعليم شامل وعالي الجودة مدى الحياة.
+          </p>
         </div>
         <div class="goal">
           <i class="fas fa-leaf fa-3x"></i>
-          <h3>العمل المناخي</h3>
-          <p>الحد من آثار التغير المناخي وحماية كوكبنا.</p>
+          <h3 data-ar="العمل المناخي" data-en="Climate Action">
+            العمل المناخي
+          </h3>
+          <p
+            data-ar="الحد من آثار التغير المناخي وحماية كوكبنا."
+            data-en="Reduce the effects of climate change and protect our planet."
+          >
+            الحد من آثار التغير المناخي وحماية كوكبنا.
+          </p>
         </div>
         <div class="goal">
           <i class="fas fa-lightbulb fa-3x"></i>
-          <h3>الابتكار والبنية التحتية</h3>
-          <p>دعم التطوير الصناعي المستدام والابتكار.</p>
+          <h3
+            data-ar="الابتكار والبنية التحتية"
+            data-en="Innovation and Infrastructure"
+          >
+            الابتكار والبنية التحتية
+          </h3>
+          <p
+            data-ar="دعم التطوير الصناعي المستدام والابتكار."
+            data-en="Support sustainable industrial development and innovation."
+          >
+            دعم التطوير الصناعي المستدام والابتكار.
+          </p>
         </div>
       </div>
-
-      <a href="#" class="btn">اعرف أكثر</a>
+      <a href="#" class="btn" data-ar="اعرف أكثر" data-en="Learn More"
+        >اعرف أكثر</a
+      >
     </section>
 
-    <footer>&copy; 2025 خطة التنمية المستدامة - جميع الحقوق محفوظة</footer>
+    <section class="interactive-section">
+      <h2 data-ar="مشاركتك مهمة" data-en="Your Participation Matters">
+        مشاركتك مهمة
+      </h2>
+      <p
+        data-ar="اختر المجالات التي ترغب أن تساهم فيها:"
+        data-en="Choose the areas you wish to contribute to:"
+      >
+        اختر المجالات التي ترغب أن تساهم فيها:
+      </p>
+      <form onsubmit="handleSubmit(event)">
+        <label
+          ><input type="checkbox" name="field" value="البيئة" />
+          <span data-ar="حماية البيئة" data-en="Environmental Protection"
+            >حماية البيئة</span
+          ></label
+        >
+        <label
+          ><input type="checkbox" name="field" value="التعليم" />
+          <span data-ar="تحسين التعليم" data-en="Improving Education"
+            >تحسين التعليم</span
+          ></label
+        >
+        <label
+          ><input type="checkbox" name="field" value="الصحة" />
+          <span data-ar="دعم الرعاية الصحية" data-en="Healthcare Support"
+            >دعم الرعاية الصحية</span
+          ></label
+        >
+        <label
+          ><input type="checkbox" name="field" value="الطاقة" />
+          <span data-ar="الطاقة النظيفة" data-en="Clean Energy"
+            >الطاقة النظيفة</span
+          ></label
+        >
+        <button
+          type="submit"
+          data-ar="أرسل مشاركتك"
+          data-en="Submit Your Input"
+        >
+          أرسل مشاركتك
+        </button>
+      </form>
+      <p id="result"></p>
+    </section>
+
+    <section class="faq">
+      <h2 data-ar="الأسئلة الشائعة" data-en="Frequently Asked Questions">
+        الأسئلة الشائعة
+      </h2>
+      <div>
+        <h3
+          onclick="toggleFAQ(this)"
+          data-ar="ما هي أهداف التنمية المستدامة؟"
+          data-en="What are the Sustainable Development Goals?"
+        >
+          ما هي أهداف التنمية المستدامة؟
+        </h3>
+        <p
+          data-ar="هي مجموعة أهداف أقرتها الأمم المتحدة لضمان مستقبل أفضل للجميع بحلول عام 2030."
+          data-en="A set of goals adopted by the UN to ensure a better future for all by 2030."
+        >
+          هي مجموعة أهداف أقرتها الأمم المتحدة لضمان مستقبل أفضل للجميع بحلول
+          عام 2030.
+        </p>
+        <h3
+          onclick="toggleFAQ(this)"
+          data-ar="كيف يمكنني المساهمة؟"
+          data-en="How can I contribute?"
+        >
+          كيف يمكنني المساهمة؟
+        </h3>
+        <p
+          data-ar="من خلال تغييرات بسيطة في نمط حياتك، كترشيد استهلاك الطاقة، ودعم التعليم، أو نشر التوعية."
+          data-en="Through small lifestyle changes, such as conserving energy, supporting education, or raising awareness."
+        >
+          من خلال تغييرات بسيطة في نمط حياتك، كترشيد استهلاك الطاقة، ودعم
+          التعليم، أو نشر التوعية.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-links">
+        <a href="#">عن المبادرة</a>
+        <a href="#">سياسة الخصوصية</a>
+        <a href="#">تواصل معنا</a>
+      </div>
+      <p>
+        &copy; 2025
+        <span
+          data-ar="خطة التنمية المستدامة"
+          data-en="Sustainable Development Plan"
+          >خطة التنمية المستدامة</span
+        >
+        -
+        <span data-ar="جميع الحقوق محفوظة" data-en="All rights reserved"
+          >جميع الحقوق محفوظة</span
+        >
+      </p>
+    </footer>
+
+    <script>
+      function toggleFAQ(header) {
+        const next = header.nextElementSibling;
+        next.style.display = next.style.display === "block" ? "none" : "block";
+      }
+
+      function handleSubmit(e) {
+        e.preventDefault();
+        const fields = Array.from(
+          document.querySelectorAll('input[name="field"]:checked')
+        ).map((el) => el.value);
+        document.getElementById("result").textContent = fields.length
+          ? `شكراً لمساهمتك في المجالات التالية: ${fields.join(", ")}`
+          : "يرجى اختيار مجال واحد على الأقل.";
+      }
+
+      function translatePage() {
+        const currentLang = document.documentElement.lang;
+        const newLang = currentLang === "ar" ? "en" : "ar";
+        const newDir = newLang === "ar" ? "rtl" : "ltr";
+        document.documentElement.lang = newLang;
+        document.documentElement.dir = newDir;
+        document.querySelector(".translate-btn").textContent =
+          newLang === "ar" ? "English" : "العربية";
+
+        const translatables = document.querySelectorAll("[data-ar]");
+        translatables.forEach((el) => {
+          el.textContent = el.dataset[newLang];
+        });
+      }
+    </script>
     <script src="./master.js"></script>
   </body>
 </html>
